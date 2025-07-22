@@ -400,14 +400,11 @@ grid.innerHTML = `
   onHover: (e, els) => {
     const box = document.getElementById('sliceValue');
     if (!els.length) {                                   // mouse left pie
-      if (!els.length) {  // mouse left pie
-  pieChart.data.datasets[0].backgroundColor = origColors;
-  pieChart.update();
-  // Instead of empty string, keep a non-breaking space to keep height fixed
-  box.textContent = '\u00A0'; 
-  box.style.color = 'transparent';  // hide text but keep space reserved
-  return;
-}
+      pieChart.data.datasets[0].backgroundColor = origColors;
+      pieChart.update();
+      box.textContent = '';
+      box.style.color = '#000';
+      return;
     }
     const i   = els[0].index;
     const lbl = pieChart.data.labels[i];

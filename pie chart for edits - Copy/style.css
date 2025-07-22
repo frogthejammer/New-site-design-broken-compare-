@@ -137,3 +137,25 @@ select, input[type="checkbox"] {
   overflow: hidden;     /* avoid overflow if text is longer */
   transition: color 0.3s ease; /* keep smooth color changes */
 }
+
+
+#compareSection {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.large-chart-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+#compareSection {
+  display: block;
+  padding: 20px;
+  background: white; /* or something visible */
+}
+
+#compareSection canvas {
+  width: 100% !important;
+  height: auto !important;
+}
