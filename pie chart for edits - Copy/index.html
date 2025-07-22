@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imperial County DA • Case Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.sheetjs.com/xlsx-0.20.3/package/dist/xlsx.full.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alasql/dist/alasql.min.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1>Imperial County DA</h1>
+      <p>Case Outcomes & Diversion Programs</p>
+    </div>
+  </header>
+
+  <div class="layout">
+    <aside class="sidebar">
+      <h2>Filters</h2>
+      <label>Measure
+        <select id="metric">
+          <option value="all_cases">All cases received</option>
+          <optgroup label="Decisions after case review">
+            <option value="all_reviewed">All reviewed cases</option>
+            <option value="Prosecuted">Prosecuted</option>
+            <option value="Diverted pre‑charge">Diverted (pre‑charge)</option>
+            <option value="Diverted post‑charge">Diverted (post‑charge)</option>
+            <option value="Declined">Declined / No‑file</option>
+          </optgroup>
+          <optgroup label="Cases diverted">
+            <option value="all_diverted">Cases diverted (total)</option>
+            <option value="Mental Health Diversion (MHD)">Mental Health Diversion (MHD)</option>
+            <option value="Drug Diversion Program">Drug Diversion</option>
+            <option value="Restorative Justice Program">Restorative Justice</option>
+            <option value="Other">Other</option>
+          </optgroup>
+        </select>
+      </label>
+
+      <label>Time Range
+        <select id="range">
+          <option value="last12">Last 12 months</option>
+          <option value="monthly">Monthly</option>
+          <option value="quarterly">Quarterly</option>
+          <option value="annual">Annual</option>
+        </select>
+      </label>
+
+      <label>Group By
+        <select id="dimension"></select>
+      </label>
+
+      <label class="checkbox">
+        <input type="checkbox" id="pieToggle" checked />
+        Use Pie Chart Mode
+      </label>
+    </aside>
+
+    <main class="dashboard">
+      <div id="compareSection" style="display:none; margin-bottom: 20px;">
+  <canvas id="largeChart" width="900" height="300"></canvas>
+</div>
+
+
+      <section id="chartGrid" class="chart-grid"></section>
+    </main>
+  </div>
+</body>
+</html>
