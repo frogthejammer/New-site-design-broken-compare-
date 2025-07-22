@@ -345,7 +345,7 @@ grid.innerHTML = `
   <div class="chart-box" style="flex:1 1 320px;">
     <div class="chart-head">
       <div class="chart-title">Breakdown</div>
-      <div class="chart-month" id="sliceMonth"></div>
+      
     </div>
     <div class="chart-number" id="sliceValue"></div>
     <canvas id="pieMain" height="140"></canvas>
@@ -449,7 +449,6 @@ pieChart.update();
   // default pie = most recent bucket
   updatePie(buckets.length - 1);
   document.getElementById('lineMonth').textContent = labels.at(-1);
-  document.getElementById('sliceMonth').textContent = labels.at(-1);
 
 }
 
